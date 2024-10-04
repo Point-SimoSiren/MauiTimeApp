@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTimeApp.MainPage" x:Name="sivu">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label x:Name="tervehdys" FontSize="30" TextColor="DarkViolet" Margin="200, 10, 10, 10" />
+
+            <Button x:Name="nappi" Text="Näytä tervehdys" Clicked="nappi_Clicked" Padding="30" CornerRadius="20" />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

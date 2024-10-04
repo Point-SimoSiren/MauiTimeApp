@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTimeApp.EmployeePage"
+             Title="EmployeePage">
+
+
+    <VerticalStackLayout>
+
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Work App" HorizontalTextAlignment="Center" TextColor="White" FontSize="28"/>
+        </Frame>
+
+        <!-- Hakukenttä -->
+        <SearchBar Placeholder="Hae etu- tai sukunimellä"
+                   TextChanged="OnSearchBarTextChanged" />
+
+        
+        <!-- Latausilmoitus -->
+        <Label x:Name="emp_lataus" />
+
+        
+        <ListView x:Name="employeeList" SelectionMode="Single" Margin="20, 0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <ContentView Padding="3">
+                            <Frame BorderColor="Silver" Padding="2">
+
+                                <StackLayout BackgroundColor="AliceBlue" Orientation="Horizontal" Padding="0, 2">
+
+                                    <Image Source="{Binding ImageLink}"
+                                     
+                                      WidthRequest="40"
+                                      HeightRequest="40"
+                                         VerticalOptions="StartAndExpand"
+                                            Margin="0, 0, 0, 0"/>
+
+                                    <Label Text="{Binding FirstName}"
+                                              
+                                               TextColor="Purple"
+                                               FontSize="22"
+                                               VerticalOptions="StartAndExpand" 
+                                           Margin="20, 0, 0, 0"/>
+
+
+                                    <Label Text="{Binding LastName}"
+                                        
+                                         TextColor="Purple"
+                                           FontSize="22"
+                                           VerticalOptions="StartAndExpand"
+                                            HorizontalOptions="Center"
+                                             Margin="5, 0, 0, 0"/>
+
+                                </StackLayout>
+                            </Frame>
+                        </ContentView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Navigointi seuraavalle sivulle -->
+        <Button x:Name="navibutton" Text="Työtehtäviin" Clicked="navibutton_Clicked"></Button>
+
+
+    </VerticalStackLayout>
+
+</ContentPage>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTimeApp.WaPage"
+             Title="WaPage">
+    
+    <VerticalStackLayout>
+    
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Timesheet app" HorizontalTextAlignment="Center" TextColor="White" FontSize="28"/>
+        </Frame>
+
+        <Label Text="Valitse työtehtävä"></Label>
+
+        <Label x:Name="wa_lataus" />
+
+        <ListView x:Name="waList" StyleClass="lista" SelectionMode="Single">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <TextCell Text="{Binding Title}" Detail="{Binding Deadline}"/>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+        <!-- Koordinaattien näyttäminen-->
+        <Label x:Name="lat_label"></Label>
+
+        <Label x:Name="lon_label"></Label>
+
+        
+        <!-- Start ja Stop napit -->
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 40, 0, 30">
+            
+            <Button x:Name="startbutton" Clicked="startbutton_Clicked" Text="Aloita työ"></Button>
+            
+            <Button x:Name="stopbutton" Clicked="stopbutton_Clicked" Margin="10, 0, 0, 0" Text="Lopeta työ"></Button>
+            
+        </HorizontalStackLayout>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTimeApp.TabbedEsimerkki"
+             Title="TabbedEsimerkki">
+
+            <ContentPage Title="valaistus">
+                    <VerticalStackLayout>
+                        
+                            <Label Text="Valaistus" FontSize="40" />
+
+            <Label Text="{Binding Source={x:Reference olohuone_slider},
+                             Path=Value, StringFormat='Olohuone: {0:N1}' }" FontSize="40" />
+
+                            <Slider x:Name="olohuone_slider" />
+                        
+                    </VerticalStackLayout>  
+
+              </ContentPage>
+
+    
+    
+                <ContentPage Title="Ilmastointi">
+                     <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label Text="Ilmastointi" Margin="130, 0, 0, 20" />
+            <HorizontalStackLayout  HorizontalOptions="Center" VerticalOptions="Center">
+                             <Image Source="dotnet_bot.png" WidthRequest="200" HeightRequest="200"  />
+                            <Image Source="dotnet_bot.png" WidthRequest="200" HeightRequest="200"  />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>  
+                </ContentPage>
+
+
+                <ContentPage Title="Hälytys">
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="Hälytys" FontSize="40" />
+                        <Label x:Name="hälytys_txt" Text="Pois päältä" FontSize="30" TextColor="red" />
+                         <Switch x:Name="kytkin" IsToggled="False" Toggled="kytkin_Toggled" />
+                </VerticalStackLayout>
+                
+    </ContentPage>
+
+
+</TabbedPage>
